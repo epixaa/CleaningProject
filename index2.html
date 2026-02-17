@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Glanz & Sauber - Ihr Reinigungsservice</title>
+    <style>
+        :root { --primary: #0056b3; --secondary: #28a745; --dark: #333; --light: #f8f9fa; --white: #fff; }
+        body { font-family: 'Segoe UI', sans-serif; margin: 0; line-height: 1.6; color: var(--dark); background: var(--light); }
+        .container { width: 90%; max-width: 1100px; margin: auto; padding: 20px; }
+        img { max-width: 100%; height: auto; border-radius: 5px; }
+        
+        header { background: var(--white); box-shadow: 0 2px 10px rgba(0,0,0,0.1); position: sticky; top: 0; z-index: 100; }
+        header .container { display: flex; justify-content: space-between; align-items: center; padding: 15px 20px; }
+        .logo { font-size: 1.5rem; font-weight: bold; color: var(--primary); text-decoration: none; }
+        header nav ul { display: flex; list-style: none; margin: 0; padding: 0; }
+        header nav ul li { margin-left: 25px; }
+        header nav a { text-decoration: none; color: var(--dark); font-weight: 600; }
+        header nav a:hover, header nav a.active { color: var(--primary); }
+
+        /* Hero Image */
+        #hero {
+            background: linear-gradient(rgba(0, 86, 179, 0.7), rgba(0, 86, 179, 0.7)), url('https://images.unsplash.com/photo-1497366754035-f200968a6e72?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80');
+            background-size: cover;
+            background-position: center;
+            height: 500px;
+            color: var(--white);
+            display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center;
+        }
+        #hero h1 { font-size: 3rem; margin-bottom: 1rem; text-shadow: 2px 2px 4px rgba(0,0,0,0.3); }
+        #hero p { font-size: 1.3rem; max-width: 700px; margin-bottom: 2rem; }
+        .btn { display: inline-block; background: var(--secondary); color: var(--white); padding: 12px 35px; border-radius: 30px; text-decoration: none; font-weight: bold; transition: background 0.3s; }
+        .btn:hover { background: #218838; }
+
+        .section-title { text-align: center; margin-bottom: 40px; color: var(--primary); }
+        #intro { padding: 60px 0; background: var(--white); }
+        .intro-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; }
+        
+        #services-preview { padding: 60px 0; }
+        .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; }
+        .service-card { background: var(--white); border-radius: 8px; overflow: hidden; box-shadow: 0 3px 10px rgba(0,0,0,0.1); }
+        .service-card img { width: 100%; height: 200px; object-fit: cover; }
+        .service-card-content { padding: 20px; text-align: center; }
+        .service-card h3 { color: var(--primary); margin-top: 0; }
+
+        footer { background: var(--dark); color: var(--white); padding: 30px 0; text-align: center; margin-top: auto; }
+        footer a { color: #ccc; text-decoration: none; margin: 0 10px; }
+        @media(max-width: 768px) { header .container { flex-direction: column; } header nav ul { margin-top: 20px; } #hero h1 { font-size: 2rem; } .intro-grid { grid-template-columns: 1fr; } .intro-grid img { order: -1; } }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <a href="index2.html" class="logo">Glanz & Sauber</a>
+            <nav>
+                <ul>
+                    <li><a href="index2.html" class="active">Startseite</a></li>
+                    <li><a href="leistungen.html">Leistungen</a></li>
+                    <li><a href="ueber.html">Über uns</a></li>
+                    <li><a href="kontakt.html">Kontakt</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section id="hero">
+        <h1>Professionelle Gebäudereinigung</h1>
+        <p>Wir sorgen für strahlende Sauberkeit in Büros, Praxen und Privathaushalten.</p>
+        <a href="kontakt.html" class="btn">Jetzt Angebot anfordern</a>
+    </section>
+
+    <section id="intro">
+        <div class="container">
+            <div class="intro-grid">
+                <div>
+                    <h2 class="section-title" style="text-align: left;">Ihr Partner für Sauberkeit</h2>
+                    <p>Die Suche nach einem zuverlässigen Reinigungsservice in Deutschland kann schwierig sein. Wir machen es Ihnen einfach.</p>
+                    <p>Unser geschultes Team verwendet moderne Techniken und umweltfreundliche Mittel.</p>
+                </div>
+                <div>
+                    <img src="https://cleanfix24.de/assets/img/banner_mbl.jpg" alt="Unser Reinigungsteam">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="services-preview">
+        <div class="container">
+            <h2 class="section-title">Unsere Kernleistungen</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Büroreinigung">
+                    <div class="service-card-content">
+                        <h3>Büroreinigung</h3>
+                        <p>Für ein produktives Arbeitsklima. Wir reinigen Schreibtische und Böden.</p>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <img src="https://www.theglassguru.com/wp-content/uploads/2022/02/cleaning-glass-1--1400x934.jpeg" alt="Fensterreinigung">
+                    <div class="service-card-content">
+                        <h3>Fenster & Glas</h3>
+                        <p>Streifenfreier Glanz für Ihre Fenster und Glasfassaden.</p>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <img src="https://www.immoworx24.de/wp-content/uploads/2023/01/privathaushalte-1.jpg" alt="Privathaushalt">
+                    <div class="service-card-content">
+                        <h3>Privathaushalte</h3>
+                        <p>Genießen Sie Ihre Freizeit, während wir Ihr Zuhause auf Hochglanz bringen.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>Glanz & Sauber Gebäudereinigung &copy; <span id="year"></span></p>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+
+</body>
+</html>

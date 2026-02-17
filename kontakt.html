@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kontakt - Glanz & Sauber</title>
+    <style>
+        :root { --primary: #0056b3; --secondary: #28a745; --dark: #333; --light: #f8f9fa; --white: #fff; }
+        
+        /* Настройка на Body да заема 100% от височината на екрана */
+        body { 
+            font-family: 'Segoe UI', sans-serif; 
+            margin: 0; 
+            line-height: 1.4; 
+            color: var(--dark); 
+            background: var(--light); 
+            display: flex; 
+            flex-direction: column; 
+            min-height: 100vh; /* Това гарантира, че футърът е долу, но съдържанието е центрирано */
+        }
+
+        .container { width: 90%; max-width: 1000px; margin: auto; padding: 0 20px; }
+        
+        /* HEADER */
+        header { background: var(--white); box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+        header .container { display: flex; justify-content: space-between; align-items: center; padding: 15px 20px; }
+        .logo { font-size: 1.5rem; font-weight: bold; color: var(--primary); text-decoration: none; }
+        header nav ul { display: flex; list-style: none; margin: 0; padding: 0; }
+        header nav ul li { margin-left: 25px; }
+        header nav a { text-decoration: none; color: var(--dark); font-weight: 600; }
+        header nav a:hover, header nav a.active { color: var(--primary); }
+
+        /* MAIN CONTENT - Центриране */
+        main {
+            flex: 1; /* Заема цялото свободно място */
+            display: flex;
+            flex-direction: column;
+            justify-content: center; /* Центрира вертикално */
+            align-items: center; /* Центрира хоризонтално */
+            padding: 20px;
+        }
+
+        h1 { color: var(--primary); margin-bottom: 30px; margin-top: 0; }
+
+        /* Мрежа за контактите (2 реда по 2 колони) */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            width: 100%;
+            max-width: 800px;
+        }
+
+        .contact-card {
+            background: var(--white);
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            text-align: center;
+            transition: transform 0.2s;
+        }
+
+        .contact-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+        }
+
+        .icon { font-size: 2rem; margin-bottom: 10px; display: block; }
+        .label { font-weight: bold; color: #777; font-size: 0.9rem; text-transform: uppercase; margin-bottom: 5px; display: block; }
+        .value { font-size: 1.1rem; font-weight: 600; color: var(--dark); }
+        .phone-link { color: var(--secondary); text-decoration: none; font-size: 1.3rem; }
+
+        /* FOOTER */
+        footer { background: var(--dark); color: var(--white); padding: 15px 0; text-align: center; }
+        footer a { color: #ccc; text-decoration: none; margin: 0 10px; }
+
+        /* Мобилна версия (тук ще се наложи скрол, ако екранът е много малък) */
+        @media(max-width: 768px) { 
+            .contact-grid { grid-template-columns: 1fr; } 
+            header .container { flex-direction: column; } 
+            header nav ul { margin-top: 10px; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <a href="index2.html" class="logo">Glanz & Sauber</a>
+            <nav>
+                <ul>
+                    <li><a href="index2.html">Startseite</a></li>
+                    <li><a href="leistungen.html">Leistungen</a></li>
+                    <li><a href="ueber.html">Über uns</a></li>
+                    <li><a href="kontakt.html" class="active">Kontakt</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <h1>Kontaktieren Sie uns</h1>
+        
+        <div class="contact-grid">
+            <div class="contact-card">
+                <span class="icon">📞</span>
+                <span class="label">Rufen Sie uns an</span>
+                <a href="tel:+49123456789" class="value phone-link">0123 456 789</a>
+            </div>
+
+            <div class="contact-card">
+                <span class="icon">✉️</span>
+                <span class="label">Schreiben Sie uns</span>
+                <a href="mailto:info@glanz-sauber.de" class="value" style="color: var(--primary); text-decoration: none;">info@glanz-sauber.de</a>
+            </div>
+
+            <div class="contact-card">
+                <span class="icon">📍</span>
+                <span class="label">Besuchen Sie uns</span>
+                <span class="value">Musterstraße 123<br>10115 Berlin</span>
+            </div>
+
+            <div class="contact-card">
+                <span class="icon">🕒</span>
+                <span class="label">Öffnungszeiten</span>
+                <span class="value">Mo - Fr: 08:00 - 18:00<br>Sa: 09:00 - 14:00</span>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>Glanz & Sauber Gebäudereinigung &copy; <span id="year"></span></p>
+            <p><a href="#">Impressum</a> | <a href="#">Datenschutz</a></p>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+
+</body>
+</html>
